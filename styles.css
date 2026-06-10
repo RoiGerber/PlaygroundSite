@@ -434,14 +434,15 @@ h3 {
   position: relative;
   width: 324px;
   aspect-ratio: 0.494;
-  border: 2px solid #9eb8a4;
+  border: 2px solid #2c322f;
   border-radius: 54px;
   padding: 9px;
-  background: #dfeade;
+  background: linear-gradient(180deg, #2a2f2d 0%, #121513 52%, #050605 100%);
   box-shadow:
     0 50px 90px rgba(37,62,45,.18),
     0 0 90px rgba(125,212,106,.14),
-    inset 0 0 0 2px #f5faf1;
+    inset 0 0 0 2px rgba(232, 240, 231, 0.1),
+    inset 0 10px 18px rgba(255, 255, 255, 0.06);
 }
 
 .phone-edge {
@@ -451,7 +452,7 @@ h3 {
   width: 4px;
   height: 78px;
   border-radius: 4px;
-  background: #b1c4b3;
+  background: linear-gradient(180deg, #555f59 0%, #262d29 100%);
 }
 
 .phone-screen {
