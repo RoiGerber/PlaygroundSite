@@ -41,7 +41,6 @@
 
         <nav class="desktop-nav" aria-label="Main navigation">
           <a href="#discover">Discover</a>
-          <a href="#how-it-works">How it works</a>
           <a href="#creators">Creators</a>
           <a href="#faq">FAQ</a>
         </nav>
@@ -70,7 +69,6 @@
 
       <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
         <a href="#discover">Discover</a>
-        <a href="#how-it-works">How it works</a>
         <a href="#creators">Creators</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -237,24 +235,26 @@
             ><span>SWIPE</span><i>✦</i><span>PLAY</span><i>✦</i
             ><span>DISCOVER</span><i>✦</i><span>REPEAT</span><i>✦</i>
           </div>
+          </div>
         </div>
       </section>
 
-      <section class="discover section-shell" id="discover">
-        <div class="section-heading reveal">
-          <div>
+      <section class="discover" id="discover">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
             <span class="section-kicker">PICK YOUR VIBE</span>
             <h2>There’s always<br />something to play.</h2>
-          </div>
-          <p>
+            </div>
+            <p>
             Quick puzzles, arcade rushes, clever experiments, and everything
             between. Playground turns discovery into the game.
-          </p>
-        </div>
+            </p>
+          </div>
 
-        <div class="games-marquee reveal" aria-label="Featured games in motion">
-          <div class="games-marquee-row games-marquee-row-forward">
-            <div class="games-marquee-track">
+          <div class="games-marquee reveal" aria-label="Featured games in motion">
+            <div class="games-marquee-row games-marquee-row-forward">
+              <div class="games-marquee-track">
               <a class="games-marquee-card float-up" href="https://d2blccfunrleyv.cloudfront.net/games/Whackablink/whack-a-blink.html" target="_blank" rel="noreferrer" aria-label="Whack a blink"><span class="games-marquee-frame"><img class="games-marquee-image" src="https://d2blccfunrleyv.cloudfront.net/games/Whackablink/Whack-a-Blink_icon.png" alt="Whack a blink" loading="lazy" /></span><span class="games-marquee-meta"><span class="games-marquee-title">Whack a blink</span><span class="games-marquee-description">Arcade / Reaction</span></span></a>
               <a class="games-marquee-card float-down" href="https://d2blccfunrleyv.cloudfront.net/games/00creators/jhice/Chinese Zodiac Mahjong/index.html" target="_blank" rel="noreferrer" aria-label="Chinese Zodiac Mahjong"><span class="games-marquee-frame"><img class="games-marquee-image" src="https://d2blccfunrleyv.cloudfront.net/games/00creators/jhice/Chinese Zodiac Mahjong/Chinese-Zodiac-Mahjong_icon.PNG" alt="Chinese Zodiac Mahjong" loading="lazy" /></span><span class="games-marquee-meta"><span class="games-marquee-title">Chinese Zodiac Mahjong</span><span class="games-marquee-description">Puzzle / Tile Match</span></span></a>
               <a class="games-marquee-card float-up" href="https://d2blccfunrleyv.cloudfront.net/games/PerfectStop/perfect-stop.html" target="_blank" rel="noreferrer" aria-label="Perfect Stop"><span class="games-marquee-frame"><img class="games-marquee-image" src="https://d2blccfunrleyv.cloudfront.net/games/PerfectStop/Perfect-Stop_icon.png" alt="Perfect Stop" loading="lazy" /></span><span class="games-marquee-meta"><span class="games-marquee-title">Perfect Stop</span><span class="games-marquee-description">Arcade / Casual</span></span></a>
@@ -287,8 +287,8 @@
           </div>
         </div>
 
-        <div class="game-grid old-game-grid">
-          <article class="catalog-card card-featured reveal" data-category="action arcade">
+          <div class="game-grid old-game-grid">
+            <article class="catalog-card card-featured reveal" data-category="action arcade">
             <div class="card-art art-zombie">
               <div class="card-badge">TRENDING</div>
               <div class="art-emoji">👾</div>
@@ -372,57 +372,14 @@
               aria-label="Get Playground on the App Store"
             >↗</a>
           </article>
+          </div>
         </div>
       </section>
 
-      <section class="how-it-works" id="how-it-works">
+      <section class="features">
         <div class="section-shell">
-          <div class="center-heading reveal">
-            <span class="section-kicker">NO TUTORIAL NEEDED</span>
-            <h2>Open. Swipe. Play.</h2>
-            <p>That’s really it. Playground gets out of the way so the fun can start.</p>
-          </div>
-
-          <div class="steps-grid">
-            <article class="step-card reveal">
-              <span class="step-number">01</span>
-              <div class="step-visual step-open">
-                <div class="mini-phone">
-                  <span class="mini-brand-mark">✦</span>
-                </div>
-                <div class="tap-ring"></div>
-              </div>
-              <h3>Open Playground</h3>
-              <p>One app unlocks a growing world of instant games.</p>
-            </article>
-            <article class="step-card reveal">
-              <span class="step-number">02</span>
-              <div class="step-visual step-swipe">
-                <div class="swipe-card swipe-back"></div>
-                <div class="swipe-card swipe-front">PLAY</div>
-                <div class="swipe-arrow">↑</div>
-              </div>
-              <h3>Swipe to discover</h3>
-              <p>Not your thing? One swipe takes you somewhere new.</p>
-            </article>
-            <article class="step-card reveal">
-              <span class="step-number">03</span>
-              <div class="step-visual step-play">
-                <div class="play-burst"></div>
-                <div class="play-button">▶</div>
-                <span class="spark spark-one">✦</span>
-                <span class="spark spark-two">✦</span>
-              </div>
-              <h3>Play instantly</h3>
-              <p>No installs between games. Tap in and start playing.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="features section-shell">
-        <div class="feature-panel reveal">
-          <div class="feature-copy">
+          <div class="feature-panel reveal">
+            <div class="feature-copy">
             <span class="section-kicker">BUILT FOR REAL LIFE</span>
             <h2>Fun that fits<br />the moment.</h2>
             <p>
@@ -434,7 +391,7 @@
               <li><span>⌁</span><div><strong>Fresh discoveries</strong><small>A living feed that keeps surprising you.</small></div></li>
               <li><span>♢</span><div><strong>Creator-powered</strong><small>Original games from indie makers worldwide.</small></div></li>
             </ul>
-          </div>
+            </div>
           <div class="feature-visual" aria-hidden="true">
             <div class="time-bubble time-one">1 MIN</div>
             <div class="time-bubble time-two">10 MIN</div>
@@ -600,7 +557,6 @@
           <div>
             <strong>Explore</strong>
             <a href="#discover">Games</a>
-            <a href="#how-it-works">How it works</a>
             <a href="#faq">FAQ</a>
           </div>
           <div>
@@ -621,3 +577,5 @@
     </footer>
   </body>
 </html>
+
+
