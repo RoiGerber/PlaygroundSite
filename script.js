@@ -51,6 +51,7 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
 const phoneGames = [...document.querySelectorAll(".phone-game")];
 const swipeCue = document.querySelector(".swipe-cue");
 const gameStack = document.querySelector(".game-stack");
+const phoneWrap = document.querySelector(".phone-wrap");
 let activeGame = 0;
 let touchStartY = 0;
 let wheelLocked = false;
@@ -99,6 +100,83 @@ gameStack.addEventListener(
   },
   { passive: true }
 );
+
+if (phoneWrap) {
+  const motionState = {
+    rafId: null,
+    shiftX: 0,
+    shiftY: 0,
+    tiltX: 0,
+    tiltY: 0,
+  };
+
+  const applyPhoneMotion = () => {
+    phoneWrap.style.setProperty("--phone-shift-x", `${motionState.shiftX}px`);
+    phoneWrap.style.setProperty("--phone-shift-y", `${motionState.shiftY}px`);
+    phoneWrap.style.setProperty("--phone-tilt-x", `${motionState.tiltX}deg`);
+    phoneWrap.style.setProperty("--phone-tilt-y", `${motionState.tiltY}deg`);
+    motionState.rafId = null;
+  };
+
+  const queuePhoneMotion = () => {
+    if (motionState.rafId !== null) return;
+    motionState.rafId = window.requestAnimationFrame(applyPhoneMotion);
+  };
+
+  const updatePhoneMotion = (clientX, clientY) => {
+    const bounds = phoneWrap.getBoundingClientRect();
+    const offsetX = (clientX - bounds.left) / bounds.width - 0.5;
+    const offsetY = (clientY - bounds.top) / bounds.height - 0.5;
+    const clampedX = Math.max(-0.5, Math.min(0.5, offsetX));
+    const clampedY = Math.max(-0.5, Math.min(0.5, offsetY));
+
+    motionState.shiftX = clampedX * 18;
+    motionState.shiftY = clampedY * 18;
+    motionState.tiltX = clampedY * -10;
+    motionState.tiltY = clampedX * 14;
+    queuePhoneMotion();
+  };
+
+  const resetPhoneMotion = () => {
+    motionState.shiftX = 0;
+    motionState.shiftY = 0;
+    motionState.tiltX = 0;
+    motionState.tiltY = 0;
+    queuePhoneMotion();
+  };
+
+  if (!reduceMotion) {
+    phoneWrap.addEventListener("pointermove", (event) => {
+      if (event.pointerType === "touch") return;
+      updatePhoneMotion(event.clientX, event.clientY);
+    });
+
+    phoneWrap.addEventListener("pointerleave", resetPhoneMotion);
+
+    phoneWrap.addEventListener(
+      "touchstart",
+      (event) => {
+        const touch = event.changedTouches[0];
+        if (touch) updatePhoneMotion(touch.clientX, touch.clientY);
+      },
+      { passive: true }
+    );
+
+    phoneWrap.addEventListener(
+      "touchmove",
+      (event) => {
+        const touch = event.changedTouches[0];
+        if (touch) updatePhoneMotion(touch.clientX, touch.clientY);
+      },
+      { passive: true }
+    );
+
+    phoneWrap.addEventListener("touchend", resetPhoneMotion, { passive: true });
+    phoneWrap.addEventListener("touchcancel", resetPhoneMotion, { passive: true });
+  } else {
+    resetPhoneMotion();
+  }
+}
 
 const filterButtons = document.querySelectorAll(".filter-pill");
 const catalogCards = document.querySelectorAll(".catalog-card");

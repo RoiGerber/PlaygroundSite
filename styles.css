@@ -101,28 +101,31 @@ button {
 }
 
 .brand-mark {
-  display: grid;
-  grid-template-columns: repeat(2, 9px);
-  gap: 3px;
-  width: 22px;
-  transform: rotate(-9deg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 2px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 24px rgba(20, 50, 34, 0.12);
+  overflow: hidden;
 }
 
-.brand-mark span {
-  aspect-ratio: 1;
-  border-radius: 3px;
-  background: currentColor;
-}
-
-.brand-mark span:nth-child(2),
-.brand-mark span:nth-child(3) {
-  opacity: 0.55;
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 7px;
 }
 
 .brand-mark.large {
-  grid-template-columns: repeat(2, 17px);
-  gap: 5px;
-  width: 39px;
+  width: 54px;
+  height: 54px;
+  padding: 4px;
+  border-radius: 18px;
 }
 
 .desktop-nav {
@@ -421,13 +424,32 @@ h3 {
 
 .phone-wrap {
   position: relative;
-  transform: perspective(1200px) rotateY(-7deg) rotateX(2deg) rotateZ(2deg);
-  animation: phoneFloat 6s ease-in-out infinite;
+  --phone-shift-x: 0px;
+  --phone-shift-y: 0px;
+  --phone-tilt-x: 0deg;
+  --phone-tilt-y: 0deg;
+  perspective: 1200px;
+  transform: translate3d(var(--phone-shift-x), var(--phone-shift-y), 0);
+  transition: transform 180ms ease-out;
+  will-change: transform;
+  touch-action: pan-y;
 }
 
 @keyframes phoneFloat {
-  0%, 100% { transform: perspective(1200px) rotateY(-7deg) rotateX(2deg) rotateZ(2deg) translateY(0); }
-  50% { transform: perspective(1200px) rotateY(-4deg) rotateX(0deg) rotateZ(1deg) translateY(-13px); }
+  0%, 100% {
+    transform:
+      rotateY(calc(-7deg + var(--phone-tilt-y)))
+      rotateX(calc(2deg + var(--phone-tilt-x)))
+      rotateZ(2deg)
+      translateY(0);
+  }
+  50% {
+    transform:
+      rotateY(calc(-4deg + var(--phone-tilt-y)))
+      rotateX(calc(0deg + var(--phone-tilt-x)))
+      rotateZ(1deg)
+      translateY(-13px);
+  }
 }
 
 .phone {
@@ -443,6 +465,9 @@ h3 {
     0 0 90px rgba(125,212,106,.14),
     inset 0 0 0 2px rgba(232, 240, 231, 0.1),
     inset 0 10px 18px rgba(255, 255, 255, 0.06);
+  transform-style: preserve-3d;
+  animation: phoneFloat 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .phone-edge {
