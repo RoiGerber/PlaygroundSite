@@ -385,9 +385,7 @@ h3 {
   padding: 18px 20px;
   border: 1px solid rgba(20, 50, 34, 0.1);
   border-radius: 24px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(238, 247, 234, 0.9)),
-    rgba(255, 255, 255, 0.88);
+  background: #ffffff;
   box-shadow:
     0 22px 46px rgba(20, 50, 34, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.65);
@@ -431,28 +429,38 @@ h3 {
 .hero-proof-rating {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   width: fit-content;
-  padding: 7px 12px;
+  padding: 8px 14px;
   border: 1px solid rgba(20, 50, 34, 0.12);
   border-radius: 999px;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(246, 239, 208, 0.94));
   box-shadow: 0 10px 24px rgba(20, 50, 34, 0.08);
   color: #143222;
+  white-space: nowrap;
 }
 
 .hero-proof-rating strong {
-  font-size: 16px;
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-family: var(--heading);
+  font-size: clamp(24px, 2.5vw, 32px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  color: #143222;
 }
 
-.stars {
-  color: #ffe56c;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-shadow: 0 1px 10px rgba(255, 200, 0, 0.35);
+.stars-image {
+  display: block;
+  flex-shrink: 0;
+  width: clamp(108px, 14vw, 146px);
+  height: auto;
+}
+
+.hero-proof-copy span {
+  display: block;
+  max-width: 28ch;
+  font-size: 14px;
+  line-height: 1.35;
 }
 
 .hero-visual {
@@ -2524,12 +2532,16 @@ h3 {
     border-radius: 22px;
   }
 
-  .hero-proof-copy::before {
-    font-size: 34px;
-  }
-
   .hero-proof-copy span {
     font-size: 13px;
+  }
+
+  .hero-proof-rating {
+    gap: 10px;
+  }
+
+  .hero-proof-rating strong {
+    font-size: 34px;
   }
 
   .stars-image {
