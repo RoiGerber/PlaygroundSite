@@ -378,14 +378,27 @@ h3 {
 .hero-proof {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 18px;
   margin-top: 38px;
-  color: #75897c;
+  width: fit-content;
+  max-width: min(100%, 520px);
+  padding: 18px 20px;
+  border: 1px solid rgba(20, 50, 34, 0.1);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(238, 247, 234, 0.9)),
+    rgba(255, 255, 255, 0.88);
+  box-shadow:
+    0 22px 46px rgba(20, 50, 34, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  color: var(--muted);
   font-size: 12px;
+  backdrop-filter: blur(14px);
 }
 
 .avatar-stack {
   display: flex;
+  flex-shrink: 0;
 }
 
 .avatar {
@@ -2263,6 +2276,7 @@ h3 {
 .footer-links a {
   color: #667d6f;
   font-size: 12px;
+  overflow-wrap: anywhere;
   transition: color .2s;
 }
 
@@ -2505,6 +2519,21 @@ h3 {
 
   .hero-proof {
     align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .hero-proof-copy::before {
+    font-size: 34px;
+  }
+
+  .hero-proof-copy span {
+    font-size: 13px;
+  }
+
+  .stars-image {
+    width: 138px;
   }
 
   .hero-visual {
