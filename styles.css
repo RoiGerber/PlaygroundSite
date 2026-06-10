@@ -463,6 +463,22 @@ h3 {
   background: #111;
 }
 
+.phone-video-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 11;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.08), transparent 30%),
+    #050505;
+}
+
+.phone-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .phone-status {
   position: absolute;
   top: 0;
@@ -475,6 +491,14 @@ h3 {
   padding: 13px 20px;
   font-size: 10px;
   font-weight: 700;
+}
+
+.game-stack,
+.phone-topbar,
+.social-rail,
+.swipe-cue,
+.interaction-hint {
+  display: none;
 }
 
 .dynamic-island {
@@ -902,14 +926,15 @@ h3 {
   color: var(--text);
 }
 
-.old-game-grid {
-  display: none;
+.game-grid.old-game-grid {
+  display: none !important;
 }
 
 .games-marquee {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  margin-top: 34px;
   border: 1px solid var(--line);
   border-radius: 32px;
   padding: 12px;
@@ -2317,6 +2342,7 @@ h3 {
   }
 
   .games-marquee {
+    margin-top: 24px;
     border-radius: 24px;
     padding: 10px;
   }
