@@ -431,19 +431,15 @@ h3 {
   align-items: center;
   gap: 12px;
   width: fit-content;
-  padding: 8px 14px;
-  border: 1px solid rgba(20, 50, 34, 0.12);
-  border-radius: 999px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(246, 239, 208, 0.94));
-  box-shadow: 0 10px 24px rgba(20, 50, 34, 0.08);
   color: #143222;
   white-space: nowrap;
 }
 
 .hero-proof-rating strong {
   font-family: var(--heading);
-  font-size: clamp(24px, 2.5vw, 32px);
+  flex-shrink: 0;
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.06em;
   color: #143222;
@@ -2541,7 +2537,7 @@ h3 {
   }
 
   .hero-proof-rating strong {
-    font-size: 34px;
+    font-size: 38px;
   }
 
   .stars-image {
