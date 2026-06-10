@@ -2,7 +2,7 @@
   "name": "playground-marketing-site",
   "private": true,
   "scripts": {
-    "dev": "node dev-server.js",
-    "start": "node dev-server.js"
+    "dev": "node dev-server.js --host 0.0.0.0",
+    "start": "node dev-server.js --host 0.0.0.0"
   }
 }

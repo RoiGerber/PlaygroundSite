@@ -1,10 +1,26 @@
 const http = require("http");
 const fs = require("fs");
+const os = require("os");
 const path = require("path");
 
 const root = __dirname;
-const port = Number(process.env.PORT || 4173);
-const host = "127.0.0.1";
+const port = 4173;
+
+const getArgument = (name) => {
+  let value;
+
+  process.argv.slice(2).forEach((argument, index, argumentsList) => {
+    if (argument === name && argumentsList[index + 1]) {
+      value = argumentsList[index + 1];
+    } else if (argument.startsWith(`${name}=`)) {
+      value = argument.slice(name.length + 1);
+    }
+  });
+
+  return value;
+};
+
+const host = getArgument("--host") || process.env.HOST || "0.0.0.0";
 const contentTypes = {
   ".css": "text/css; charset=utf-8",
   ".html": "text/html; charset=utf-8",
@@ -40,5 +56,20 @@ const server = http.createServer((request, response) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`Playground site running at http://${host}:${port}`);
+  const urls = new Set();
+
+  if (host === "0.0.0.0" || host === "::") {
+    urls.add(`http://localhost:${port}`);
+
+    Object.values(os.networkInterfaces())
+      .flat()
+      .filter((network) => network && network.family === "IPv4" && !network.internal)
+      .forEach((network) => urls.add(`http://${network.address}:${port}`));
+  } else {
+    urls.add(`http://${host}:${port}`);
+  }
+
+  console.log(`Playground site listening on ${host}:${port}`);
+  console.log("Available URLs:");
+  urls.forEach((url) => console.log(`  ${url}`));
 });
