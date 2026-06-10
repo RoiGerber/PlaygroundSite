@@ -410,10 +410,36 @@ h3 {
 .avatar-three { background: #d7ff72; }
 .avatar-four { background: #d8a1ff; }
 
+.hero-proof-copy {
+  display: grid;
+  gap: 7px;
+}
+
+.hero-proof-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 7px 12px;
+  border: 1px solid rgba(20, 50, 34, 0.12);
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(246, 239, 208, 0.94));
+  box-shadow: 0 10px 24px rgba(20, 50, 34, 0.08);
+  color: #143222;
+}
+
+.hero-proof-rating strong {
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
 .stars {
   color: #ffe56c;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 2px;
+  text-shadow: 0 1px 10px rgba(255, 200, 0, 0.35);
 }
 
 .hero-visual {
@@ -2001,6 +2027,144 @@ h3 {
   padding: 0 48px 27px 0;
 }
 
+.contact-section {
+  padding: 40px 0 140px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 34px;
+  align-items: stretch;
+}
+
+.contact-copy,
+.contact-cards {
+  min-width: 0;
+}
+
+.contact-copy {
+  padding: 42px;
+  border: 1px solid rgba(47, 111, 67, 0.12);
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at top left, rgba(120, 202, 131, 0.24), transparent 38%),
+    linear-gradient(155deg, #ffffff, #f4fbf1 62%, #e5f3de);
+  box-shadow: 0 24px 60px rgba(58, 108, 70, 0.12);
+}
+
+.contact-copy h2 {
+  margin: 16px 0 18px;
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+  color: #225233;
+}
+
+.contact-copy p {
+  margin: 0;
+  max-width: 34ch;
+  color: #476455;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.contact-mail {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 26px;
+  border-bottom: 1px solid rgba(47, 111, 67, 0.24);
+  padding-bottom: 6px;
+  color: #2f6f43;
+  font-family: var(--heading);
+  font-size: clamp(18px, 2vw, 24px);
+  letter-spacing: -0.03em;
+}
+
+.contact-cards {
+  display: grid;
+  gap: 24px;
+}
+
+.contact-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  overflow: hidden;
+  min-height: 190px;
+  border: 1px solid rgba(47, 111, 67, 0.12);
+  border-radius: 34px;
+  padding: 30px 32px;
+  color: white;
+  box-shadow: 0 24px 58px rgba(58, 108, 70, 0.12);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: auto -10% -45% auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(111, 196, 122, 0.18);
+  filter: blur(10px);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(47, 111, 67, 0.22);
+  box-shadow: 0 30px 72px rgba(58, 108, 70, 0.18);
+}
+
+.contact-card-tiktok {
+  background: linear-gradient(135deg, #111111, #1f3040 52%, #25f4ee);
+}
+
+.contact-card-instagram {
+  background: linear-gradient(135deg, #5124b8, #d62976 48%, #feda75);
+}
+
+.contact-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+.contact-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.contact-card-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-card-copy strong {
+  font-family: var(--heading);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.contact-card-copy span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
 .final-cta {
   position: relative;
   display: grid;
@@ -2303,6 +2467,10 @@ h3 {
     position: static;
   }
 
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
   .footer-main {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -2342,6 +2510,50 @@ h3 {
   .hero-visual {
     min-height: 590px;
     transform: scale(.94);
+  }
+
+  .contact-section {
+    padding-top: 20px;
+    padding-bottom: 110px;
+  }
+
+  .contact-copy,
+  .contact-card {
+    padding: 26px 22px;
+    border-radius: 28px;
+  }
+
+  .contact-copy h2 {
+    font-size: clamp(36px, 11vw, 52px);
+  }
+
+  .contact-copy p {
+    font-size: 15px;
+  }
+
+  .contact-mail {
+    font-size: 18px;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-card {
+    min-height: 160px;
+    gap: 18px;
+  }
+
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+  }
+
+  .contact-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .contact-card-copy strong {
+    font-size: 30px;
   }
 
   .phone {
