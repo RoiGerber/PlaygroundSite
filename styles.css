@@ -1410,7 +1410,7 @@ h3 {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 38px;
-  background: #111114;
+  background: linear-gradient(145deg, #ffffff, #eef7ea);
 }
 
 .feature-copy {
@@ -1453,7 +1453,7 @@ h3 {
   height: 43px;
   border: 1px solid var(--line);
   border-radius: 13px;
-  background: #1b1b21;
+  background: #edf6e9;
 }
 
 .feature-list div {
@@ -1467,7 +1467,7 @@ h3 {
 }
 
 .feature-list small {
-  color: #85838d;
+  color: #6c8374;
   font-size: 12px;
 }
 
@@ -1478,8 +1478,8 @@ h3 {
   min-height: 650px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 45%, rgba(236,72,153,.45), transparent 35%),
-    linear-gradient(145deg, #332073, #7e2e78 52%, #db5b57);
+    radial-gradient(circle at 50% 45%, rgba(125,212,106,.2), transparent 35%),
+    linear-gradient(145deg, #dff5d7, #84ca8c 52%, #4f9e63);
 }
 
 .feature-phone {
@@ -1487,12 +1487,12 @@ h3 {
   z-index: 2;
   width: 250px;
   height: 500px;
-  border: 8px solid #18171b;
+  border: 8px solid #2d4434;
   border-radius: 44px;
   padding: 7px;
-  background: #313038;
+  background: #405a47;
   transform: rotate(5deg);
-  box-shadow: 0 45px 65px rgba(0,0,0,.45);
+  box-shadow: 0 45px 65px rgba(37,62,45,.28);
 }
 
 .feature-screen {
@@ -1503,12 +1503,12 @@ h3 {
   height: 100%;
   border-radius: 31px;
   background:
-    repeating-radial-gradient(circle at 50% 50%, transparent 0 18px, rgba(255,255,255,.04) 19px 20px),
-    linear-gradient(160deg, #122b44, #382154 55%, #da4e73);
+    repeating-radial-gradient(circle at 50% 50%, transparent 0 18px, rgba(255,255,255,.08) 19px 20px),
+    linear-gradient(160deg, #2f5c38, #5ca66b 55%, #d7f0cb);
 }
 
 .feature-screen span {
-  color: #a9fdff;
+  color: #e7fff0;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: .2em;
@@ -1527,8 +1527,8 @@ h3 {
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  background: var(--lime);
-  color: #111;
+  background: #eaf8e5;
+  color: #143222;
 }
 
 .time-bubble {
