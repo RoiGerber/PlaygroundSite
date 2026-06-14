@@ -14,6 +14,24 @@
           "value": "strict-origin-when-cross-origin"
         }
       ]
+    },
+    {
+      "source": "/.well-known/apple-app-site-association",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/assetlinks.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
     }
   ],
   "rewrites": [
@@ -28,6 +46,10 @@
     {
       "source": "/video/:path*",
       "destination": "https://d3twd5pvxo75es.cloudfront.net/video/:path*"
+    },
+    {
+      "source": "/game-profile/:path*",
+      "destination": "https://d3twd5pvxo75es.cloudfront.net/game-profile/:path*"
     },
     {
       "source": "/_expo/:path*",
