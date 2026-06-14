@@ -28,6 +28,10 @@
     {
       "source": "/video/:path*",
       "destination": "https://d3twd5pvxo75es.cloudfront.net/video/:path*"
+    },
+    {
+      "source": "/_expo/:path*",
+      "destination": "https://d3twd5pvxo75es.cloudfront.net/_expo/:path*"
     }
   ]
 }
