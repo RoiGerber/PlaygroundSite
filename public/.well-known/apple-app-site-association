@@ -1,0 +1,20 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["JCRQ5KLJM4.com.roigerber.gargearmobile"],
+        "components": [
+          {
+            "/": "/video/*"
+          },
+          {
+            "/": "/game-profile/*"
+          },
+          {
+            "/": "/share/*"
+          }
+        ]
+      }
+    ]
+  }
+}
