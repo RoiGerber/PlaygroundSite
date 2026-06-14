@@ -24,6 +24,10 @@
     {
       "source": "/s/:path*",
       "destination": "https://gargear-api-626774022709.europe-west1.run.app/s/:path*"
+    },
+    {
+      "source": "/video/:path*",
+      "destination": "https://application-host-gamefeed.s3.us-east-1.amazonaws.com/video/:path*"
     }
   ]
 }
