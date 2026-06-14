@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.roigerber.gargearmobile",
+      "sha256_cert_fingerprints": [
+        "AE:19:E9:78:80:08:1A:CE:07:FE:4E:A9:B5:52:D1:8F:B2:1A:01:4E:46:69:2B:51:52:55:84:DC:75:84:3E:14",
+        "D4:87:06:AF:C4:F5:6A:07:93:FA:7D:0F:4C:1C:10:59:5C:D7:24:ED:15:9B:C6:E2:39:02:37:85:B5:D8:63:57"
+      ]
+    }
+  }
+]
