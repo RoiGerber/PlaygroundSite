@@ -2591,6 +2591,41 @@ h3 {
   .store-button-row {
     width: 100%;
     justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .store-button-row .app-store-button {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 58px;
+    gap: 10px;
+    padding: 8px 12px;
+  }
+
+  .store-button-row .app-store-button svg {
+    width: 24px;
+  }
+
+  .store-button-row .app-store-button small {
+    font-size: 9px;
+  }
+
+  .store-button-row .app-store-button strong {
+    font-size: clamp(16px, 4.8vw, 20px);
+  }
+
+  .store-button-row .store-button-soon {
+    padding-right: 14px;
+    padding-left: 12px;
+  }
+
+  .store-button-row .soon-stamp {
+    top: -10px;
+    right: 6px;
+    min-height: 22px;
+    padding: 2px 8px;
+    font-size: 9px;
   }
 
   .hero-proof {
