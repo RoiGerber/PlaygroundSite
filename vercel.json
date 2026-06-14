@@ -19,15 +19,11 @@
   "rewrites": [
     {
       "source": "/share/:path*",
-      "destination": "https://d3twd5pvxo75es.cloudfront.net/share/:path*"
+      "destination": "https://p7knmjbkfamg7rgb5dl2nffkq0fukfq.lambda-url.us-east-1.on.aws/share/:path*"
     },
     {
       "source": "/s/:path*",
-      "destination": "https://d3twd5pvxo75es.cloudfront.net/s/:path*"
-    },
-    {
-      "source": "/video/:path*",
-      "destination": "https://d3twd5pvxo75es.cloudfront.net/video/:path*"
+      "destination": "https://gargear-api-626774022709.europe-west1.run.app/s/:path*"
     }
   ]
 }
