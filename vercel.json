@@ -15,5 +15,15 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/share/:path*",
+      "destination": "https://d3twd5pvxo75es.cloudfront.net/share/:path*"
+    },
+    {
+      "source": "/s/:path*",
+      "destination": "https://d3twd5pvxo75es.cloudfront.net/s/:path*"
+    }
   ]
 }
