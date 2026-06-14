@@ -27,7 +27,7 @@
     },
     {
       "source": "/video/:path*",
-      "destination": "https://application-host-gamefeed.s3.us-east-1.amazonaws.com/video/:path*"
+      "destination": "https://d3twd5pvxo75es.cloudfront.net/video/:path*"
     }
   ]
 }
