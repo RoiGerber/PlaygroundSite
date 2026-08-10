@@ -8,22 +8,26 @@ const updateHeader = () => {
   header.classList.toggle("scrolled", window.scrollY > 24);
 };
 
-updateHeader();
-window.addEventListener("scroll", updateHeader, { passive: true });
+if (header) {
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+}
 
-menuButton.addEventListener("click", () => {
-  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-  menuButton.setAttribute("aria-expanded", String(!isOpen));
-  menuButton.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
-  mobileMenu.classList.toggle("open", !isOpen);
-  document.body.classList.toggle("menu-open", !isOpen);
-});
+if (menuButton && mobileMenu) {
+  menuButton.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+    mobileMenu.classList.toggle("open", !isOpen);
+    document.body.classList.toggle("menu-open", !isOpen);
+  });
+}
 
 mobileLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Open menu");
-    mobileMenu.classList.remove("open");
+    menuButton?.setAttribute("aria-expanded", "false");
+    menuButton?.setAttribute("aria-label", "Open menu");
+    mobileMenu?.classList.remove("open");
     document.body.classList.remove("menu-open");
   });
 });
@@ -69,37 +73,39 @@ const showNextGame = () => {
   }, reduceMotion ? 0 : 220);
 };
 
-swipeCue.addEventListener("click", showNextGame);
+swipeCue?.addEventListener("click", showNextGame);
 
-gameStack.addEventListener(
-  "touchstart",
-  (event) => {
-    touchStartY = event.changedTouches[0].clientY;
-  },
-  { passive: true }
-);
+if (gameStack) {
+  gameStack.addEventListener(
+    "touchstart",
+    (event) => {
+      touchStartY = event.changedTouches[0].clientY;
+    },
+    { passive: true }
+  );
 
-gameStack.addEventListener(
-  "touchend",
-  (event) => {
-    const distance = touchStartY - event.changedTouches[0].clientY;
-    if (distance > 35) showNextGame();
-  },
-  { passive: true }
-);
+  gameStack.addEventListener(
+    "touchend",
+    (event) => {
+      const distance = touchStartY - event.changedTouches[0].clientY;
+      if (distance > 35) showNextGame();
+    },
+    { passive: true }
+  );
 
-gameStack.addEventListener(
-  "wheel",
-  (event) => {
-    if (Math.abs(event.deltaY) < 20 || wheelLocked) return;
-    wheelLocked = true;
-    showNextGame();
-    window.setTimeout(() => {
-      wheelLocked = false;
-    }, 650);
-  },
-  { passive: true }
-);
+  gameStack.addEventListener(
+    "wheel",
+    (event) => {
+      if (Math.abs(event.deltaY) < 20 || wheelLocked) return;
+      wheelLocked = true;
+      showNextGame();
+      window.setTimeout(() => {
+        wheelLocked = false;
+      }, 650);
+    },
+    { passive: true }
+  );
+}
 
 if (phoneWrap) {
   const motionState = {

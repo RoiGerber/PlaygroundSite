@@ -29,18 +29,35 @@ const contentTypes = {
   ".svg": "image/svg+xml",
 };
 
-const server = http.createServer((request, response) => {
-  const requestPath = decodeURIComponent(request.url.split("?")[0]);
+const resolveFilePath = (requestPath) => {
   const relativePath = requestPath === "/" ? "index.html" : requestPath.slice(1);
   const filePath = path.resolve(root, relativePath);
 
-  if (!filePath.startsWith(root)) {
+  if (!filePath.startsWith(root)) return { status: 403 };
+
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+    return { filePath };
+  }
+
+  const htmlPath = `${filePath}.html`;
+  if (fs.existsSync(htmlPath) && fs.statSync(htmlPath).isFile()) {
+    return { filePath: htmlPath };
+  }
+
+  return { filePath };
+};
+
+const server = http.createServer((request, response) => {
+  const requestPath = decodeURIComponent(request.url.split("?")[0]);
+  const resolved = resolveFilePath(requestPath);
+
+  if (resolved.status === 403) {
     response.writeHead(403);
     response.end("Forbidden");
     return;
   }
 
-  fs.readFile(filePath, (error, content) => {
+  fs.readFile(resolved.filePath, (error, content) => {
     if (error) {
       response.writeHead(error.code === "ENOENT" ? 404 : 500);
       response.end(error.code === "ENOENT" ? "Not found" : "Server error");
@@ -48,7 +65,7 @@ const server = http.createServer((request, response) => {
     }
 
     response.writeHead(200, {
-      "Content-Type": contentTypes[path.extname(filePath)] || "application/octet-stream",
+      "Content-Type": contentTypes[path.extname(resolved.filePath)] || "application/octet-stream",
       "Cache-Control": "no-store",
     });
     response.end(content);
