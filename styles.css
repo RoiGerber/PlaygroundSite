@@ -389,46 +389,6 @@ h3 {
   letter-spacing: -0.03em;
 }
 
-.store-button-soon {
-  cursor: not-allowed;
-  user-select: none;
-  padding-right: 24px;
-  padding-left: 18px;
-  opacity: 0.96;
-}
-
-.store-button-soon svg {
-  width: 30px;
-}
-
-.soon-stamp {
-  position: absolute;
-  top: -11px;
-  right: 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 24px;
-  border: 2px solid #4b9f5e;
-  border-radius: 999px;
-  padding: 2px 10px;
-  background: #ecf8e7;
-  color: #2f6f43;
-  font-family: var(--heading);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: 0 8px 18px rgba(54, 94, 67, .12);
-  transform: rotate(-7deg);
-}
-
-.store-button-soon-light .soon-stamp {
-  border-color: #f2ffbe;
-  background: rgba(249, 255, 222, 0.95);
-  color: #2f6f43;
-}
-
 .text-link {
   display: inline-flex;
   gap: 9px;
@@ -2705,19 +2665,6 @@ h3 {
 
   .store-button-row .app-store-button strong {
     font-size: clamp(16px, 4.8vw, 20px);
-  }
-
-  .store-button-row .store-button-soon {
-    padding-right: 14px;
-    padding-left: 12px;
-  }
-
-  .store-button-row .soon-stamp {
-    top: -10px;
-    right: 6px;
-    min-height: 22px;
-    padding: 2px 8px;
-    font-size: 9px;
   }
 
   .hero-proof {
